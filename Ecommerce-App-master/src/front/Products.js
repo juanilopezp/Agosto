@@ -1,9 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from 'axios'
 import './Products.css'
-import { CartState } from '../components/Cart'
+import { useDispatchCart } from '../components/CartContext'
 
-function Products() {
+
+
+const Products = () => {
+  const dispatch = useDispatchCart();
+  const addToCart = (item) => {
+    dispatch({ type: "ADD", item });
+  };
+
   const [productos, setProductos] = useState("")
   useEffect (()=>{
     const fetchdata = async () => {
@@ -12,8 +19,6 @@ function Products() {
   }
   fetchdata();
   }, [])
-
-  
     return (productos &&
       productos?.data.map((prod) =>{
          return (
@@ -25,17 +30,9 @@ function Products() {
             </h3>
             <h6 className='desc'>{prod.descripcion}</h6>
             <h1 className='presio'>${prod.precio}</h1>
-            <button>agregar a carrito</button>
+            <button onClick={() => addToCart(prod)}>Agregar al carro</button>
             
           </div>
-        )
-        })
-    )
-         
-      
-      
-    
-  
+        )}))
 }
-
 export default Products

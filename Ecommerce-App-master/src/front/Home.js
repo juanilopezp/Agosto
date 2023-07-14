@@ -1,5 +1,4 @@
 import React from 'react'
-import { CartState } from '../components/Cart'
 
 const Home = () => {
   

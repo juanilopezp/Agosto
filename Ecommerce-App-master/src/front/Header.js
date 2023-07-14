@@ -1,35 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useCart } from '../components/CartContext'
 
-const nav = [
-    {
-        nombre: "Home",
-        path: "/"
-    },
-    {
-        nombre: "Productos",
-        path: "/productos"
-    },
-    {
-        nombre: "Contacto",
-        path: "/contactanos"
-    },
-    {
-      nombre: "Carrito",
-      path: "/carrito"
-    }
-]
 
 function Header() {
+  const items = useCart();
   return (
     <nav>
-      {
-        nav.map((nav) => {
-          return(
-            <Link to= {nav.path}>{nav.nombre}</Link>
-          )
-        })
-      }
+        <Link className="home" to="/">
+          home
+        </Link>
+        <Link className="productos" to="/productos">
+          productos
+        </Link>
+        <Link className="carrito" to="/cart">
+          Carro ({items.length})
+        </Link>
     </nav>
   )
 }
