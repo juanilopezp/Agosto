@@ -1,0 +1,19 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(255, 255, 105);
+}
+.productos{
+    text-align: center;
+}
+.carrito{
+    margin-left: auto;
+}
+.home{
+    margin-right: auto;
+    font-size: xx-large;
+    font-weight: 550;
+    color: #f6a;
+}

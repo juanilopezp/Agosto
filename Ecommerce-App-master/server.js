@@ -2,12 +2,49 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const app = express()
+const mercadopago = require("mercadopago")
+
 const Category = require('./src/components/Categories/index')
 const Product = require('./src/components/Products/index')
 
 
 app.use(express.json())
 app.use(cors())
+
+mercadopago.configure({
+    access_token: "TEST-4828545902400130-071900-7e9dd0e0ac80b6a7207164ff9578146f-334569657"
+})
+
+
+app.post("/create_preference", (req, res) => {
+    let preference = {
+      items: [
+        {
+          title: req.body.description,
+          unit_price: Number(req.body.price),
+          quantity: 1,
+        },
+      ],
+      back_urls: {
+        success: "http://localhost:3000",
+        failure: "http://localhost:3000",
+        pending: "",
+      },
+      auto_return: "approved",
+    };
+  
+    mercadopago.preferences
+      .create(preference)
+      .then(function (response) {
+        res.json({
+          id: response.body.id,
+        });
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
+
 
 app.get('/category', async(req, res) => {
     try {
