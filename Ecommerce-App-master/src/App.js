@@ -4,6 +4,7 @@ import Home from './front/Home';
 import Header from './front/Header';
 import Products from './front/Products';
 import Store from './front/Cart';
+import CreateProduct from './front/AddProduct';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Products />} />
         <Route path="/cart" element={<Store />} />
+        <Route path="/create" element={<CreateProduct />} />
       </Routes>
     </div>
     /*

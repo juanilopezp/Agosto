@@ -17,6 +17,9 @@ function Header() {
         <Link className="carrito" to="/cart">
           <img src={Carrito} /> ({items.length})
         </Link>
+        <Link to={'/create'}>
+        crear productos
+      </Link>
     </nav>
   )
 }

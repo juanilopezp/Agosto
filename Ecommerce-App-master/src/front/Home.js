@@ -1,10 +1,10 @@
 import React from 'react'
 import './Home.css'
+import { Link } from 'react-router-dom'
 const Home = () => {
   
   return (
-
-
+    <>
     <div className='home-container'>
       <div className='texto'>
         <b>
@@ -14,7 +14,10 @@ const Home = () => {
           Tienda exclusivamente de discos de hardcore y punk, en todas sus variables.
         </h6>
       </div>
+      
     </div>
+    
+    </>
   )
 }
 

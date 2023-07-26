@@ -85,7 +85,7 @@ const CartItem = ({ product, index, handleRemove }) => {
             index={index}
           />
         ))}
-        <button onClick={handleBuy} >Pagar xd</button>
+        <button onClick={handleBuy} >Pagar</button>
         <Wallet initialization={{ preferenceId }} />
       </main>
     );
