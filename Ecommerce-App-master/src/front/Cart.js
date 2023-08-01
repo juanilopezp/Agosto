@@ -9,7 +9,6 @@ initMercadoPago('TEST-9e68dfa9-17c3-4bcb-9550-d2ef0d330cc8');
 const CartItem = ({ product, index, handleRemove }) => {
   
     return (
-      
           <div className='contenedor' >
             <img src={product.image} />
             <h1 className='name'>{product.nombre}</h1>
@@ -77,14 +76,15 @@ const CartItem = ({ product, index, handleRemove }) => {
             currency: "ARS"
           })}
         </p>
-        {items.map((item, index) => (
+        <div className="dady-container">{items.map((item, index) => (
           <CartItem
             handleRemove={handleRemove}
             key={index}
             product={item}
             index={index}
           />
-        ))}
+        ))}</div>
+        
         <button onClick={handleBuy} >Pagar</button>
         <Wallet initialization={{ preferenceId }} />
       </main>

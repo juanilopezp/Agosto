@@ -1,8 +1,13 @@
+.dady-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3%;
+}
 .contenedor{
     overflow: hidden;
     border: 4px solid pink;
     border-radius: 5%;
-    width: 20%;
+    width: 80%;
     height: 400px;
 }
 img, .name, .presio, .desc, button{

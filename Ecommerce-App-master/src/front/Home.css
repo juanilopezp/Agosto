@@ -18,8 +18,15 @@ b, h6{
     margin-top: 15%;
     width: 30%;
     height: 25%;
+    line-height: 50%;
 }
 .home-midle{
-    margin-top: 5vh;
     height: 50vh;
+}
+.text-container{
+    padding: 2vh 2vw;
+    position: relative;
+    top: 40%;
+    border-width: .2vw;
+    border-color: #05a;
 }
