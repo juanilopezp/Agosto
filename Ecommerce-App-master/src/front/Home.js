@@ -14,6 +14,9 @@ const Home = () => {
           Tienda exclusivamente de discos de hardcore y punk, en todas sus variables.
         </h6>
       </div>
+      <div className='flechita'>
+          Desliza para crear un nuevo producto ↓
+      </div>
     </div>
     <div className="home-midle">
       <div className="text-container">
@@ -23,6 +26,11 @@ const Home = () => {
           </Link>
       </div>
     </div>
+    <footer>
+      contactanos:
+      telefono: xxxxxxxxxxx
+      e-mail: xxxxxxxxxxxxx
+    </footer>
     
     </>
   )

@@ -48,9 +48,9 @@ function CreateProduct() {
             <input className='input-file' type='file' onChange={(e) => {
           uploadImage(e);
         }} placeholder='imagen 64'/>
-            <input onChange={(e) => setDescripcion(e.target.value)} value={descripcion} placeholder='descripcion'/>
+            <input onChange={(e) => setDescripcion(e.target.value)} value={descripcion} placeholder='Descripcion'/>
             <input type="number" onChange={(e) => setPrecio(e.target.value)} value={precio} />
-            <button onClick={addProduct}>subir producto</button>
+            <button className='addProduct-btn' onClick={addProduct}>subir producto</button>
         </div></>
   )
 }

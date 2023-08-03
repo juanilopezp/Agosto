@@ -84,9 +84,12 @@ const CartItem = ({ product, index, handleRemove }) => {
             index={index}
           />
         ))}</div>
+        <div className="button-container">
+          <button className='mp-sub-btn' onClick={handleBuy} >Pagar</button>
+          <Wallet initialization={{ preferenceId }} />
+          <div>*para pagar aprete el boton "pagar", y luego aprete en donde dice "Pay with Mercado Pago"</div>
+        </div>
         
-        <button onClick={handleBuy} >Pagar</button>
-        <Wallet initialization={{ preferenceId }} />
       </main>
     );
   }
